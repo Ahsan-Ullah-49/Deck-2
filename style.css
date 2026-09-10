@@ -993,6 +993,14 @@ body {
 .af-slide .gc-metric-label {
   color: #C9A84C;
 }
+/* Last 6 brand-logo cards in Global Cast — golden "Followers" label */
+.gc-slide .gc-grid .gc-card:nth-child(n+12) .gc-metric-label {
+  color: #C9A84C;
+}
+/* Bottom breathing room so cards don't get cut */
+.gc-slide {
+  padding-bottom: 5vh;
+}
 .gc-name {
   font-size: 1.3vw;
   font-weight: 700;
