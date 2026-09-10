@@ -36,3 +36,32 @@ window.addEventListener('load', () => {
     }
   });
 });
+
+// Intersection Observer for scroll animations
+document.addEventListener('DOMContentLoaded', () => {
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -50px 0px', // trigger slightly before it hits the very bottom
+    threshold: 0.05
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        // Stop observing once animated in so it doesn't blink or re-trigger
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Select all elements that should animate
+  const animatedElements = document.querySelectorAll('.fade-up, .fade-in, .slide, .gc-card, .benefit');
+  animatedElements.forEach(el => {
+    // Add base fade-up class if it doesn't already have one
+    if (!el.classList.contains('fade-up') && !el.classList.contains('fade-in')) {
+       el.classList.add('fade-up');
+    }
+    observer.observe(el);
+  });
+});
