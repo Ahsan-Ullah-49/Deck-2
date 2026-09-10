@@ -1094,6 +1094,31 @@ body {
   .gc-logo-text { font-size: 1.1vw; }
 }
 
+/* ── TABLET: 1 card per row ──────────────────────────────── */
+@media (min-width: 641px) and (max-width: 1180px) {
+  .gc-grid {
+    grid-template-columns: 1fr;
+    gap: 3vw;
+  }
+  .vs-grid {
+    grid-template-columns: 1fr;
+    gap: 3vw;
+  }
+  .lc-grid {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 3vw;
+  }
+  .lc-grid .gc-card,
+  .lc-grid .gc-card:nth-child(1),
+  .lc-grid .gc-card:nth-child(2),
+  .lc-grid .gc-card:nth-child(3),
+  .lc-grid .gc-card:nth-child(4),
+  .lc-grid .gc-card:nth-child(5) {
+    width: 100% !important;
+  }
+}
+
 @media (max-width: 900px) and (orientation: portrait) {
   .gc-slide, .local-slide { min-height: auto; padding-bottom: 12vw; }
   .gc-slide .safe.tight, .local-slide .safe.tight { height: auto; display: block; }
@@ -1181,6 +1206,38 @@ body {
 }
 @media (max-width: 900px) and (orientation: portrait) {
   .af-footer { font-size: 3.2vw; margin-top: 4vw !important; }
+}
+
+/* Already Filmed — 2-per-row, 1:1 cards */
+.af-2col-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2vw;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+.af-2col-grid .gc-card {
+  aspect-ratio: 1 / 1;
+}
+@media (max-width: 900px) and (orientation: portrait) {
+  .af-2col-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4vw;
+    max-width: 100%;
+  }
+  .af-2col-grid .gc-card {
+    aspect-ratio: 1 / 1;
+  }
+}
+@media (max-width: 480px) {
+  .af-2col-grid {
+    grid-template-columns: 1fr;
+    gap: 5vw;
+  }
+  .af-2col-grid .gc-card {
+    aspect-ratio: 1 / 1;
+  }
 }
 
 /* Beyond logo */
