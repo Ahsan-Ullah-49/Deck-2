@@ -6,7 +6,7 @@
 :root {
   --img-bugatti: url("./Assets/images/BUGATTI-World-Premiere-Presskit-Images-01-1.jpg");
   --img-rolls: url("https://i.pinimg.com/736x/16/f3/be/16f3be4737099149b931c007437ed17a.jpg");
-  --img-fourwd: url("./Assets/images/club.png");
+  --img-fourwd: url("./Assets/images/4x4.jpg");
   --img-tesla: url("./Assets/images/Franz\ von\ Holzhausenn.png");
   --img-classics: url("./Assets/images/IMG_7427_1080x1080.jpg");
   --img-workshop: url("./Assets/images/logo.jpg");
@@ -30,18 +30,26 @@
   --img-still-4: url("./Assets/images/Still\ 4.png");
   --img-still-5: url("./Assets/images/Still\ 5.png");
   --img-still-6: url("./Assets/images/Still\ 6.png");
+  --img-still-7: url("./Assets/images/Still\ 7.jpg");
+  --img-still-8: url("./Assets/images/Still\ 8.png");
+  --img-still-9: url("./Assets/images/Still\ 9.png");
+  --img-still-10: url("./Assets/images/Still\ 10.png");
   --img-BUGATTI-logo: url("./Assets/Logos/BUGATTI.png");
-  --img-ROLLS-logo: url("./Assets/Logos/ROLLS\ ROYCE.png");
+  --img-Zagato-logo: url("./Assets/Logos/Zagato.png");
   --img-TESLA-logo: url("./Assets/Logos/tesla.png");
-  --img-NISSAN-logo: url("./Assets/Logos/NISSAN.png");
+  --img-Pagani-logo: url("./Assets/Logos/Pagani.png");
   --img-rimac-logo: url("./Assets/Logos/RIMAC.png");
+  --img-BMW-logo: url("./Assets/Logos/BMW.png");
+  --img-club: url("./Assets/images/club.png");
+  
+
   
 
 
   --bg: #0f0f10;
   --panel: #18181b;
   --panel2: #202024;
-  --red: #e5143b;
+  --red: #C9A84C;
   --white: #f5f5f5;
   --muted: #aaaab1;
   --line: rgba(255, 255, 255, 0.12);
@@ -187,10 +195,10 @@ body {
 
 .ring {
   position: absolute;
-  border: 1.5px solid var(--red);
+  border: 1.5px solid #C9A84C;
   border-radius: 50%;
   pointer-events: none;
-  opacity: 0.8;
+  opacity: 0.85;
 }
 .ring.a {
   width: 18vw;
@@ -266,7 +274,7 @@ body {
 }
 .cover-copy {
   position: absolute !important;
-  top: 46% !important;
+  top: 38% !important;
   left: 50% !important;
   right: auto !important;
   transform: translate(-50%, -50%) !important;
@@ -277,18 +285,43 @@ body {
 }
 .cover-copy h1 {
   font-size: clamp(32px, 8vw, 150px) !important;
-  line-height: 1.15 !important;
+  line-height: 1.2 !important;
   letter-spacing: 0.02em !important;
   margin: 0 !important;
   font-weight: 850 !important;
   text-transform: uppercase !important;
+  text-shadow:
+    0 0 8px rgba(0,0,0,1),
+    0 0 20px rgba(0,0,0,1),
+    0 0 45px rgba(0,0,0,0.95),
+    0 0 80px rgba(0,0,0,0.85),
+    0 0 120px rgba(0,0,0,0.7),
+    3px 3px 6px rgba(0,0,0,1),
+    -3px -3px 6px rgba(0,0,0,1),
+    3px -3px 6px rgba(0,0,0,1),
+    -3px 3px 6px rgba(0,0,0,1) !important;
+  background: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  display: block !important;
 }
 .cover-copy .tag {
   margin-top: 0.8em !important;
   font-size: clamp(15px, 1.8vw, 40px) !important;
-  color: var(--red) !important;
+  color: #C9A84C !important;
   font-style: italic !important;
-  font-weight: 400 !important;
+  font-weight: 500 !important;
+  text-shadow:
+    0 0 8px rgba(0,0,0,1),
+    0 0 20px rgba(0,0,0,1),
+    0 0 45px rgba(0,0,0,0.95),
+    0 0 80px rgba(0,0,0,0.8),
+    2px 2px 5px rgba(0,0,0,1),
+    -2px -2px 5px rgba(0,0,0,1) !important;
+  background: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  display: inline-block !important;
 }
 .cover-meta {
   position: absolute !important;
@@ -318,6 +351,7 @@ body {
   }
   .cover-copy {
     width: 92vw !important;
+    top: 38% !important;
   }
   .cover-copy h1 {
     font-size: clamp(32px, 11vw, 60px) !important;
@@ -402,17 +436,10 @@ body {
   line-height: 1.55;
   color: #d1d1d5;
   position: relative;
-  padding-left: clamp(16px, 1.5vw, 24px);
+  padding-left: 0;
 }
 .syn-paragraphs p::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.55em;
-  width: clamp(6px, 0.5vw, 9px);
-  height: clamp(6px, 0.5vw, 9px);
-  background-color: var(--red);
-  border-radius: 50%;
+  display: none;
 }
 .syn-concluding {
   margin: 0;
@@ -426,14 +453,53 @@ body {
 .syn-visual {
   width: 100%;
   height: 100%;
-  min-height: 400px;
+  min-height: 420px;
   border-radius: 12px;
   overflow: hidden;
   position: relative;
-  background-image: url("https://images.unsplash.com/photo-1614200187524-dc4b892acf16?q=80&w=2000&auto=format&fit=crop");
-  background-size: cover;
-  background-position: center;
+  background-image: url("./Assets/images/chiron-sport-og.png");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: #0a0a0c;
   box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+/* Responsive syn-visual image */
+@media (max-width: 1280px) {
+  .syn-visual {
+    min-height: 360px;
+    background-size: cover;
+  }
+}
+@media (max-width: 1024px) {
+  .syn-visual {
+    min-height: 0;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center center;
+  }
+}
+@media (max-width: 768px) {
+  .syn-visual {
+    min-height: 0;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+  }
+}
+@media (max-width: 480px) {
+  .syn-visual {
+    aspect-ratio: 4 / 3;
+    border-radius: 6px;
+    background-size: cover;
+    background-position: center center;
+  }
 }
 .syn-visual:after {
   content: "";
@@ -444,6 +510,7 @@ body {
     transparent 60%,
     rgba(5, 5, 7, 0.9) 100%
   );
+  z-index: 2;
 }
 .syn-tags {
   display: flex;
@@ -547,12 +614,25 @@ body {
   background-image: url("./Assets/images/sleek-black-luxury-sports-car-with-a-keychain-in-focus-set-against-a-dark-backdrop-photo.jpg");
   filter: grayscale(0.15);
 }
+
+/* Map image below statement text */
+.statement-map {
+  display: block;
+  margin: 2.5vw auto 0;
+  width: clamp(180px, 28vw, 420px);
+  height: auto;
+  opacity: 0.5;
+  filter: brightness(0.8) contrast(1.1);
+  pointer-events: none;
+  user-select: none;
+}
 .quote-center {
   position: relative;
   width: 100%;
   text-align: center;
   padding: 0 6vw;
   z-index: 2;
+  margin-top: 12vh;
 }
 .quote-center h2 {
   font-size: clamp(32px, 5.5vw, 92px);
@@ -797,6 +877,56 @@ body {
   gap: 2vw;
 }
 
+/* Visual Stills Grid — 2 cols desktop, big cards */
+.vs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2vw;
+}
+.vs-grid .gc-card {
+  aspect-ratio: 1 / 1;
+}
+@media (max-width: 1024px) {
+  .vs-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3vw;
+  }
+  .vs-grid .gc-card {
+    aspect-ratio: 1 / 1;
+  }
+}
+@media (max-width: 640px) {
+  .vs-grid {
+    grid-template-columns: 1fr;
+    gap: 4vw;
+  }
+  .vs-grid .gc-card {
+    aspect-ratio: 1 / 1;
+  }
+}
+
+/* Already Filmed Grid — 3 cols, one row */
+.af-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2vw;
+  max-width: 900px;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .af-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3vw;
+    max-width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .af-grid {
+    grid-template-columns: 1fr;
+    gap: 4vw;
+  }
+}
+
 /* Cards */
 .gc-card {
   position: relative;
@@ -849,6 +979,7 @@ body {
   line-height: 1;
   margin-bottom: 0.3vw;
   color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.7);
 }
 .gc-metric-label {
   font-size: 0.8vw;
@@ -857,21 +988,24 @@ body {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.9);
 }
 .af-slide .gc-metric-label {
-  color: var(--red);
+  color: #C9A84C;
 }
 .gc-name {
   font-size: 1.3vw;
   font-weight: 700;
   line-height: 1.2;
   color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.95), 0 0 20px rgba(0,0,0,0.8);
 }
 .gc-role {
   font-size: 0.85vw;
-  color: var(--red);
+  color: #C9A84C;
   margin-top: 0.4vw;
   font-weight: 600;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.95), 0 0 12px rgba(0,0,0,0.8);
 }
 
 /* Logos */
@@ -1006,6 +1140,11 @@ body {
 .lc-grid .gc-card:nth-child(3) {
   width: calc(33.333% - 1.34vw);
 }
+.af-slide .lc-grid .gc-card:nth-child(4),
+.af-slide .lc-grid .gc-card:nth-child(5),
+.af-slide .lc-grid .gc-card:nth-child(6) {
+  width: calc(33.333% - 1.34vw);
+}
 .lc-grid .gc-card:nth-child(4),
 .lc-grid .gc-card:nth-child(5) {
   width: calc(50% - 1vw);
@@ -1119,31 +1258,34 @@ body {
 .benefit-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.72vw 1.3vw;
-  margin-top: 1.5vw;
+  gap: 2vw 4vw;
+  margin-top: 3vw;
 }
 .benefit {
   display: grid;
   grid-template-columns: 1.8vw 1fr;
-  gap: 0.75vw;
-  padding: 0.72vw 0;
+  gap: 1.5vw;
+  padding: 1.5vw 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 .benefit .bdot {
-  width: 1.05vw;
-  height: 1.05vw;
-  border: 2px solid var(--red);
+  width: 1.8vw !important;
+  height: 1.8vw !important;
+  border: 3px solid var(--red) !important;
   border-radius: 50%;
-  margin-top: 0.06vw;
+  margin-top: 0.2vw;
+  background: transparent;
+  flex-shrink: 0;
 }
 .benefit h4 {
-  font-size: 1.02vw;
-  margin: 0 0 0.2vw;
+  font-size: 1.8vw !important;
+  margin: 0 0 0.5vw;
   font-weight: 800;
+  line-height: 1.2;
 }
 .benefit p {
-  font-size: 0.69vw;
-  line-height: 1.42;
+  font-size: 1.2vw !important;
+  line-height: 1.5;
   margin: 0;
   color: #bdbdc3;
 }
@@ -1191,8 +1333,8 @@ body {
 }
 .beyond-card-text {
   color: #fff;
-  font-size: 0.9vw;
-  line-height: 1.6;
+  font-size: 1.1vw;
+  line-height: 1.65;
 }
 .beyond-footer {
   text-align: center;
@@ -1201,6 +1343,7 @@ body {
   font-style: italic;
   font-family: Georgia, serif;
   margin-top: 1.5vw;
+  padding-bottom: 3vw;
 }
 
 @media (max-width: 900px) and (orientation: portrait) {
@@ -1208,8 +1351,31 @@ body {
   .beyond-row { flex-direction: column; gap: 4vw; }
   .beyond-card { padding: 5vw; border-radius: 3vw; }
   .beyond-card-title { font-size: 3.5vw; margin-bottom: 3vw; }
-  .beyond-card-text { font-size: 3vw; line-height: 1.6; }
-  .beyond-footer { font-size: 4vw; margin-top: 5vw; }
+  .beyond-card-text { font-size: 3.2vw; line-height: 1.6; }
+  .beyond-footer { font-size: 4vw; margin-top: 5vw; padding-bottom: 8vw; }
+}
+
+/* Beyond The Logo — heading row with map logo */
+.beyond-heading-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2vw;
+}
+.beyond-map-logo {
+  height: clamp(60px, 7vw, 110px);
+  width: auto;
+  opacity: 0.7;
+  filter: brightness(1.1) contrast(1.05);
+  flex-shrink: 0;
+  pointer-events: none;
+  user-select: none;
+  transform: translateY(1.5vw);
+}
+@media (max-width: 768px) {
+  .beyond-map-logo {
+    height: clamp(50px, 10vw, 80px);
+  }
 }
 
 .segment-slide {
@@ -1217,7 +1383,7 @@ body {
   padding: 0;
 }
 .segment-bg {
-  background-image: url("./Assets/images/01_07_bugatti_chiron_super_sport_windtunnel_top-1.jpg");
+  background-image: var(--img-fourwd);
 }
 .segment-layout {
   display: grid;
@@ -1241,21 +1407,9 @@ body {
 }
 .segment-panel p {
   margin: 0;
-  font-size: clamp(14px, 1.25vw, 19px);
+  font-size: clamp(27px, 2.4vw, 39px);
   line-height: 1.55;
   color: #e0e0e3;
-  position: relative;
-  padding-left: clamp(16px, 1.5vw, 24px);
-}
-.segment-panel p::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.55em;
-  width: clamp(6px, 0.5vw, 9px);
-  height: clamp(6px, 0.5vw, 9px);
-  background-color: var(--red);
-  border-radius: 50%;
 }
 .segment-quote {
   background: var(--red);
@@ -1264,7 +1418,7 @@ body {
   box-shadow: var(--shadow);
 }
 .segment-quote p {
-  font-size: clamp(16px, 1.5vw, 24px);
+  font-size: clamp(32px, 3vw, 48px);
   line-height: 1.5;
   font-style: italic;
   text-align: left;
@@ -1278,9 +1432,9 @@ body {
 @media (max-width: 900px) and (orientation: portrait) {
   .segment-layout { grid-template-columns: 1fr; gap: 4vw; margin-top: 5vw; width: 100%; }
   .segment-panel { padding: 5vw; border-radius: 3vw; gap: 4vw; }
-  .segment-panel p { font-size: 3vw; line-height: 1.7; }
+  .segment-panel p { font-size: 4.5vw; line-height: 1.7; }
   .segment-quote { padding: 5vw; border-radius: 3vw; }
-  .segment-quote p { font-size: 3.5vw; line-height: 1.7; }
+  .segment-quote p { font-size: 8vw; line-height: 1.7; }
   .segment-quote p + p { margin-top: 4vw; }
 }
 
@@ -1905,7 +2059,7 @@ body {
   box-sizing: border-box;
 }
 .segment-panel p {
-  font-size: clamp(15px, 0.9vw, 19px);
+  font-size: clamp(22.5px, 1.35vw, 28.5px);
   line-height: 1.42;
 }
 .segment-quote {
@@ -1916,7 +2070,7 @@ body {
   align-self: start;
 }
 .segment-quote p {
-  font-size: clamp(16px, 0.96vw, 20.5px);
+  font-size: clamp(32px, 1.92vw, 41px);
   line-height: 1.46;
 }
 
@@ -2017,9 +2171,11 @@ body {
     font-size: clamp(15px, 1.1vw, 18px);
   }
   .syn-copy p,
-  .statement p,
-  .segment-panel p {
+  .statement p {
     font-size: clamp(13px, 1vw, 16px);
+  }
+  .segment-panel p {
+    font-size: clamp(19.5px, 1.5vw, 24px);
   }
   .stage p,
   .benefit p,
@@ -2426,11 +2582,11 @@ body {
     display: block;
   }
   .segment-panel p {
-    font-size: 4vw;
+    font-size: 6vw;
     margin-bottom: 4vw;
   }
   .segment-quote p {
-    font-size: 4.2vw;
+    font-size: 8.4vw;
   }
   .segment-quote {
     margin-bottom: 8vw;
@@ -2637,6 +2793,51 @@ body {
   .cta-btn {
     font-size: 14px;
     padding: 12px 18px;
+  }
+}
+
+/* ===== BENEFITS RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .benefit-grid {
+    grid-template-columns: 1fr;
+    gap: 4vw;
+    margin-top: 6vw;
+  }
+  .benefit {
+    grid-template-columns: 3.5vw 1fr;
+    gap: 3vw;
+    padding: 4vw 0;
+  }
+  .benefit .bdot {
+    width: 3.5vw !important;
+    height: 3.5vw !important;
+    margin-top: 0.5vw;
+  }
+  .benefit h4 {
+    font-size: 3.5vw !important;
+    margin-bottom: 2vw;
+  }
+  .benefit p {
+    font-size: 2.5vw !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .benefit {
+    grid-template-columns: 5vw 1fr;
+    gap: 4vw;
+    padding: 5vw 0;
+  }
+  .benefit .bdot {
+    width: 5vw !important;
+    height: 5vw !important;
+    margin-top: 0.8vw;
+  }
+  .benefit h4 {
+    font-size: 5vw !important;
+  }
+  .benefit p {
+    font-size: 3.5vw !important;
   }
 }
 
