@@ -850,7 +850,10 @@ body {
   .local-slide .safe.tight,
   .vs-slide .safe.tight,
   .af-slide .safe.tight,
-  .beyond-slide .safe.tight {
+  .beyond-slide .safe.tight,
+  .benefits-slide .safe.tight,
+  .segment-slide .safe.tight,
+  .tiers-slide .safe.tight {
     padding-right: 12vw; 
   }
 }
