@@ -3161,10 +3161,15 @@ body {
   gap: 2vw;
 }
 .dist-amazon-logo {
-  width: clamp(50px, 4.5vw, 70px);
+  width: clamp(120px, 14vw, 200px);
   height: auto;
-  opacity: 0.8;
+  opacity: 0.9;
   flex-shrink: 0;
+}
+.dist-amazon-logo img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 .dist-amazon-text {
   font-size: clamp(13px, 0.9vw, 16px);
