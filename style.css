@@ -2988,6 +2988,14 @@ body {
 /* ==========================================================
    DISTRIBUTION SLIDE — redesigned to match deck DNA
    ========================================================== */
+
+/* ── BOX-SIZING: scoped only to dist-slide ── */
+.dist-slide *,
+.dist-slide *::before,
+.dist-slide *::after {
+  box-sizing: border-box;
+}
+
 .dist-slide {
   background: var(--bg);
   position: relative;
@@ -3059,16 +3067,38 @@ body {
   background: rgba(30, 30, 35, 0.6);
 }
 
+/*
+  CONTROLLED LOGO MEDIA WRAPPER
+  — explicit square, overflow hidden, flex:0 0 auto
+  — never allows SVG intrinsic dimensions to escape
+*/
 .dist-logo-wrap {
-  width: clamp(60px, 5.5vw, 90px);
-  height: clamp(60px, 5.5vw, 90px);
+  width: clamp(64px, 5vw, 82px);
+  height: clamp(64px, 5vw, 82px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  overflow: hidden;
   filter: drop-shadow(0 4px 20px rgba(0,0,0,0.5));
 }
-.dist-logo-wrap img {
-  width: 100%;
-  height: 100%;
+
+/*
+  Aggressively normalize ALL img and svg children.
+  Scoped to .dist-slide so no other section is affected.
+  Using !important to override any SVG width/height attributes.
+*/
+.dist-slide .dist-logo-wrap img,
+.dist-slide .dist-logo-wrap svg {
   display: block;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
   object-fit: contain;
+  flex: none;
 }
 
 .dist-pname {
@@ -3160,17 +3190,35 @@ body {
   align-items: center;
   gap: 2vw;
 }
-.dist-amazon-logo {
-  width: clamp(120px, 14vw, 200px);
-  height: auto;
+
+/*
+  PRIME VIDEO — horizontal logo, different aspect ratio.
+  Uses a fixed-height wrapper rather than a square.
+  Scoped to .dist-amazon-logo within .dist-slide.
+*/
+.dist-slide .dist-amazon-logo {
+  width: clamp(140px, 14vw, 190px);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  overflow: hidden;
   opacity: 0.9;
-  flex-shrink: 0;
 }
-.dist-amazon-logo img {
-  width: 100%;
-  height: auto;
+
+.dist-slide .dist-amazon-logo img,
+.dist-slide .dist-amazon-logo svg {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  object-fit: contain;
   display: block;
+  flex: none;
 }
+
 .dist-amazon-text {
   font-size: clamp(13px, 0.9vw, 16px);
   color: rgba(255, 255, 255, 0.6);
@@ -3198,10 +3246,11 @@ body {
   .dist-logo-card {
     padding: 24px 16px;
     gap: 12px;
+    border-radius: 8px;
   }
   .dist-logo-wrap {
-    width: 48px;
-    height: 48px;
+    width: 52px;
+    height: 52px;
   }
   .dist-amazon-body {
     flex-direction: column;
@@ -3211,10 +3260,18 @@ body {
   .dist-month, .dist-year {
     font-size: 64px;
   }
+  .dist-slide .dist-amazon-logo {
+    width: clamp(120px, 36vw, 180px);
+    height: 48px;
+  }
 }
 @media (max-width: 480px) {
   .dist-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .dist-logo-wrap {
+    width: 44px;
+    height: 44px;
   }
 }
 
